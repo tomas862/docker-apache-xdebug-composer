@@ -5,10 +5,6 @@ services:
     build:
       context: .
       dockerfile: Web.DockerFile
-      args:
-        DEV: 1
-    environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
     ports:
       - '8002:80'
     volumes:
