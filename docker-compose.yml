@@ -7,5 +7,6 @@ services:
       dockerfile: Web.DockerFile
     ports:
       - '8002:80'
+#      todo: find a way to volume not override the already existing content
     volumes:
       - './:/var/www/html/'

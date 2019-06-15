@@ -4,6 +4,6 @@ services:
   web:
     build:
       args:
-        DEV: 1
+        DEV: 0
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1

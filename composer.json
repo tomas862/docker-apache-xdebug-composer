@@ -1,0 +1,7 @@
+{
+  "name": "tomas862/docker-apache-hello-world",
+  "license": "MIT",
+  "require": {
+    "rivsen/hello-world": "0.1.0"
+  }
+}
