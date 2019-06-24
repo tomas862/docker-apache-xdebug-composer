@@ -3,7 +3,8 @@ version: '3.7'
 services:
   web:
     build:
-      args:
-        DEV: 0
+      target: dev
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
+    volumes:
+      - './:/var/www/html/'

@@ -5,8 +5,6 @@ services:
     build:
       context: .
       dockerfile: Web.DockerFile
+      target: prod
     ports:
       - '8002:80'
-#      todo: find a way to volume not override the already existing content
-    volumes:
-      - './:/var/www/html/'
