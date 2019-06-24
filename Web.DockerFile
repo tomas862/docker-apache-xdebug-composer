@@ -1,5 +1,7 @@
+ARG PHP_VERSION=7.1.29
+
 # Use this image as the base image for dev and prod.
-FROM php:7.1.29-apache as common
+FROM php:${PHP_VERSION}-apache as common
 
 
 # This is the image using in development.
