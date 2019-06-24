@@ -12,12 +12,12 @@ RUN apt-get update; apt-get install -y zip unzip git; \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini;
 
 # Copy composer binary from official Composer image.
-# COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-# WORKDIR /var/www/html
+WORKDIR /var/www/html
 
 # We enable the errors only in development.
-# ENV DISPLAY_ERRORS="On"
+ENV DISPLAY_ERRORS="On"
 
 
 # In this image we will download the dependencies, but without the development dependencies.
