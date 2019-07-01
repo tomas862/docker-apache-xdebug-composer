@@ -3,6 +3,7 @@ ARG PHP_VERSION=7.1.29
 # Use this image as the base image for dev and prod.
 FROM php:${PHP_VERSION}-apache as common
 
+RUN docker-php-ext-install mysqli;
 
 # This is the image using in development.
 FROM common as dev
