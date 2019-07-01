@@ -8,15 +8,11 @@ services:
       XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
     volumes:
       - './:/var/www/html/'
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
     depends_on:
-      - db
-    links:
       - db
     restart: always
     ports:
-      - 9020
-    volumes:
-      - /sessions
+      - 9191:80

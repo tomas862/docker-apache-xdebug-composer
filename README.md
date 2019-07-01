@@ -34,6 +34,11 @@ be very similar approach for other ide's.
     * select a server you have mapped before - you can enter PHPSTORM as ide key but this is optional for now.
 4. By applying the steps above your xdebug should be configured with the server.
 
+### Mysql
+
+If you changed your root user password and mysql connection failed to be established:
+docker-compose does extra work to preserve volumes between runs (thus preserving the database); you may want to try `docker-compose rm -v` to delete everything and try starting it up again.
+
 ## Production
 
 1. run `docker-compose -f docker-compose.yml up`

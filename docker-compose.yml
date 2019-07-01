@@ -21,5 +21,3 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
-      MYSQL_USER: devuser
-      MYSQL_PASSWORD: devpass
