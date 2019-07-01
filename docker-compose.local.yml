@@ -16,3 +16,11 @@ services:
     restart: always
     ports:
       - 9191:80
+
+  php_cli:
+    build:
+      context: .
+      dockerfile: Cli.DockerFile
+      args:
+        PHP_VERSION: 7.1.29
+    tty: true
