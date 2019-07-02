@@ -7,7 +7,7 @@ services:
       dockerfile: Web.DockerFile
       target: prod
       args:
-        PHP_VERSION: 7.1.29
+        PHP_VERSION: 7.1.30
     ports:
       - '8002:80'
     depends_on:

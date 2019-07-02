@@ -1,14 +1,15 @@
-ARG PHP_VERSION=7.1.29
+ARG PHP_VERSION=7.1.30
 
 # Use this image as the base image for dev and prod.
 FROM php:${PHP_VERSION}-apache as common
 
 RUN docker-php-ext-install mysqli;
+RUN apt-get update;
 
 # This is the image using in development.
 FROM common as dev
 
-RUN apt-get update; apt-get install -y zip unzip git; \
+RUN apt-get install -y zip unzip git; \
     pecl install xdebug \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini;
 

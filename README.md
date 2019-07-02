@@ -34,16 +34,26 @@ be very similar approach for other ide's.
     * select a server you have mapped before - you can enter PHPSTORM as ide key but this is optional for now.
 4. By applying the steps above your xdebug should be configured with the server.
 
-### PHP-cli
+### Executing PHP scripts (PHPStorm)
 
-`/usr/local/bin/php` - php executable
-
-### Mysql
-
-If you changed your root user password and mysql connection failed to be established:
-docker-compose does extra work to preserve volumes between runs (thus preserving the database); you may want to try `docker-compose rm -v` to delete everything and try starting it up again.
+1. Expose daemon on `tcp://localhost:2375` port (unsafe but its good to go for local development). On windows
+ it is just clicking the checkbox in Docker desktop app
+2. In PHPStorm Go to `File -> Settings -> PHP` and click on 3 dots in `Cli interpreter`.
+3. Add new cli interpreter using docker. Select docker compose as one of the options. Select all your docker-composer files
+ within the project. 
+4. Select server and enter tcp port mentioned in first step.
+5. Refresh php settings and the PHPStorm should be able to see configured PHP and xdebug.
+6. Happy script running and debugging!
 
 ## Production
 
 1. run `docker-compose -f docker-compose.yml up`
 2. go to `localhost:8002` - you should you app up and running
+
+
+## FAQ
+
+### Mysql
+
+**If you changed your root user password and mysql connection failed to be established**:
+docker-compose does extra work to preserve volumes between runs (thus preserving the database); you may want to try `docker-compose rm -v` to delete everything and try starting it up again.
