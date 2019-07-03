@@ -12,12 +12,13 @@ services:
       - '8002:80'
     depends_on:
       - db
+    env_file:
+      - .env
 
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     ports:
       - '3306'
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test_db
+    env_file:
+      - .env

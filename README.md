@@ -1,10 +1,15 @@
 # docker-apache-xdebug-composer
-This repository combines basic usage of docker in apache environment with composer and xdebug
-
+This repository combines basic usage of docker in apache environment with composer and xdebug. Might need to improve
+security if used for serious projects (use different mysql connection techniques etc...)
 
 ## Prerequisites
 
 1. Install docker on your local machine
+
+## Environment preparation
+
+1. Create .env file
+2. Copy content from .env.dist file and enter required information
 
 ## Development environment preparation
 
